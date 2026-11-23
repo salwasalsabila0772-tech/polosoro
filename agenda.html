@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="id" class="js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agenda - PKD Polosoro Purworejo</title>
+<meta name="description" content="Kalender dan jadwal kegiatan paguyuban.">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="agenda">
+<div id="site-topbar"></div>
+<div id="site-header"></div>
+<main id="main">
+
+<div id="agenda-list-view">
+<section class="page-head"><div class="container"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Beranda</a> / <span>Agenda</span></nav><h1>Agenda Kegiatan</h1></div></section>
+
+<section class="section"><div class="container">
+  <div class="filters"><div class="pills" id="agenda-types"></div><input class="search" id="agenda-q" type="search" placeholder="Cari agenda" aria-label="Cari agenda"></div>
+  <div class="agenda-layout">
+    <div class="cal" id="cal"></div>
+    <div><div id="agenda-list" class="agenda-list"></div>
+      <p class="empty" id="agenda-empty" hidden>Tidak ada agenda pada bulan atau filter ini.</p>
+      <p><button class="btn btn--outline btn--sm" id="agenda-clear" type="button" hidden>Tampilkan semua tanggal</button></p></div>
+  </div>
+</div></section>
+</div>
+<div id="agenda-detail-view" hidden>
+<section class="page-head"><div class="container"><nav class="breadcrumb"><a href="index.html">Beranda</a> / <a href="agenda.html">Agenda</a> / <span id="crumb-title"></span></nav></div></section>
+<section class="section"><div class="container"><div class="detail" id="agenda-detail"></div></div></section>
+</div>
+</main>
+<div id="site-footer"></div>
+<script src="js/config.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/data.js"></script>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

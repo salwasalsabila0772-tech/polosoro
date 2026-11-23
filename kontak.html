@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="id" class="js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontak Kami - PKD Polosoro Purworejo</title>
+<meta name="description" content="Hubungi sekretariat Paguyuban Kepala Desa dan Perangkat Desa Purworejo.">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="kontak">
+<div id="site-topbar"></div>
+<div id="site-header"></div>
+<main id="main">
+<section class="page-head">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Beranda</a> <span class="sep">/</span> <span>Kontak Kami</span></nav>
+    <h1>Kontak Sekretariat</h1>
+    <p>Silakan hubungi kami untuk koordinasi antardesa, pertanyaan umum, kemitraan, atau informasi seputar paguyuban.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container contact">
+    <div class="card contact__card">
+      <h2 style="font-size:1.45rem;margin-bottom:6px">Kirim Pesan Cepat</h2>
+      <p class="meta" style="margin-bottom:24px">Pesan akan langsung diformat dan terkirim ke WhatsApp Sekretariat Paguyuban.</p>
+      
+      <form class="form" data-wa-form data-wa-title="Pesan dari website PKD Polosoro">
+        <div class="form__row">
+          <label class="field">
+            <span>Nama Lengkap *</span>
+            <input name="nama" data-label="Nama" placeholder="Contoh: Budi Santoso" required>
+          </label>
+          <label class="field">
+            <span>Desa / Instansi</span>
+            <input name="desa" data-label="Desa/Instansi" placeholder="Contoh: Desa Sukamaju">
+          </label>
+        </div>
+        <label class="field">
+          <span>Topik Pembahasan *</span>
+          <select name="topik" data-label="Topik">
+            <option>Pertanyaan Umum &amp; Informasi</option>
+            <option>Keanggotaan &amp; Pembaruan Data Desa</option>
+            <option>Agenda Kegiatan / Bimtek</option>
+            <option>Kerja Sama &amp; Kemitraan</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Isi Pesan *</span>
+          <textarea name="pesan" data-label="Pesan" rows="5" placeholder="Tuliskan pesan atau keperluan Anda di sini..." required></textarea>
+        </label>
+        <button class="btn btn--primary" type="submit" style="margin-top:8px">Kirim Lewat WhatsApp</button>
+      </form>
+    </div>
+
+    <div>
+      <ul class="contact__list card">
+        <li>
+          <span class="icon-wrap" data-icon="pin"></span>
+          <div>
+            <h3>Alamat Sekretariat</h3>
+            <span data-site="address"></span>
+          </div>
+        </li>
+        <li>
+          <span class="icon-wrap" data-icon="phone"></span>
+          <div>
+            <h3>Nomor Telepon</h3>
+            <span data-site="phone"></span>
+          </div>
+        </li>
+        <li>
+          <span class="icon-wrap" data-icon="mail"></span>
+          <div>
+            <h3>Email Resmi</h3>
+            <span data-site="email"></span>
+          </div>
+        </li>
+        <li>
+          <span class="icon-wrap" data-icon="clock"></span>
+          <div>
+            <h3>Jam Pelayanan</h3>
+            <span data-site="hours"></span>
+          </div>
+        </li>
+      </ul>
+      <div class="map" data-map></div>
+    </div>
+  </div>
+</section>
+</main>
+<div id="site-footer"></div>
+<script src="js/config.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/data.js"></script>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

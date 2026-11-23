@@ -1,0 +1,30 @@
+/* ==========================================================
+   VARIABEL TEMA - ganti warna, font, dan bentuk di SINI saja.
+   Warna dominan: UNGU (diambil dari logo Polosoro).
+   ========================================================== */
+:root {
+  --color-primary: #5b2d9e;        /* ungu utama: tombol, judul aksen */
+  --color-primary-dark: #2f1659;   /* ungu tua: bar atas, footer */
+  --color-primary-light: #7c4fc4;  /* ungu terang: hover */
+  --color-lavender: #8c82ea;       /* lavender (kelopak logo) */
+  --color-soft: #f4effb;           /* latar lembut seksi selang-seling */
+  --color-soft-2: #ebe3f8;
+  --color-accent: #f5b400;         /* kuning emas (dari logo) */
+  --color-accent-ink: #2a1250;     /* teks di atas kuning */
+  --color-red: #d9262c;
+  --color-green: #15803d;          /* tombol WhatsApp */
+
+  --color-ink: #1f1535;
+  --color-muted: #5d5470;
+  --color-bg: #ffffff;
+  --color-card: #ffffff;
+  --color-line: #e2d9f1;
+
+  --font-heading: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow: 0 12px 30px rgba(60, 28, 110, 0.13);
+  --container: 1200px;
+}

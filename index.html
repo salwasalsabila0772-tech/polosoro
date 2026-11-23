@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="id" class="js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beranda - PKD Polosoro Purworejo</title>
+<meta name="description" content="Website resmi Paguyuban Kepala Desa dan Perangkat Desa Kabupaten Purworejo.">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="home">
+<div id="site-topbar"></div>
+<div id="site-header"></div>
+<main id="main">
+
+<!-- HERO: Tata letak 2 kolom (tagline di sebelah kiri, frame foto placeholder di sebelah kanan tanpa logo) -->
+<section class="hero">
+  <div class="container hero__in">
+    <div class="hero__text">
+      <div class="hero__badge"><span class="badge-dot"></span> Wadah Resmi Paguyuban Kepala Desa &amp; Perangkat Desa · Kab. Purworejo</div>
+      <h1>Bersatu Membangun Desa, Melayani Masyarakat</h1>
+      <p class="hero__lead">Wadah silaturahmi, belajar, dan gotong royong kepala desa serta perangkat desa se-Kabupaten Purworejo demi terwujudnya tata kelola desa yang profesional, kompak, dan melayani.</p>
+      <div class="hero__actions">
+        <a class="btn btn--accent" href="organisasi.html">Profil Organisasi</a>
+        <a class="btn btn--light" href="organisasi.html#desa">Daftar Desa</a>
+        <a class="btn btn--outline-light" href="agenda.html">Lihat Agenda Kegiatan</a>
+      </div>
+      <div class="hero__meta-strip">
+        <div class="hero__meta-item"><strong>16</strong><span>Kecamatan</span></div>
+        <div class="hero__meta-sep"></div>
+        <div class="hero__meta-item"><strong>125+</strong><span>Desa Anggota</span></div>
+        <div class="hero__meta-sep"></div>
+        <div class="hero__meta-item"><strong>2015</strong><span>Tahun Berdiri</span></div>
+      </div>
+    </div>
+
+    <!-- FRAME FOTO DI SEBELAH TAGLINE (FOTO DIKOSONGKAN / PLACEHOLDER BERSIH, BISA DIUPLOAD DARI ADMIN) -->
+    <div class="hero__img" id="hero-img-box">
+      <div class="hero__placeholder">
+        <div class="hero__placeholder-icon">
+          <span class="icon" data-icon="image"></span>
+        </div>
+        <div class="hero__placeholder-title">Ruang Foto Dokumentasi</div>
+        <div class="hero__placeholder-desc">Area foto utama kegiatan paguyuban (dapat diunggah langsung melalui Panel Admin)</div>
+        <span class="chip chip--accent" style="margin-top:14px">Foto Belum Ditambahkan</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATISTIK KILAS -->
+<section class="section" style="padding-top:0"><div class="container"><div class="stats grid grid--4" id="stats"></div></div></section>
+
+<!-- SAMBUTAN KETUA -->
+<section class="section section--soft"><div class="container sambutan" id="sambutan"></div></section>
+
+<!-- BERITA TERBARU -->
+<section class="section"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Kabar Terbaru</span><h2>Berita &amp; Informasi Terkini</h2></div><a class="btn btn--outline btn--sm" href="berita.html">Semua Berita</a></div>
+  <div class="news-home" id="home-news"></div>
+</div></section>
+
+<!-- AGENDA MENDATANG -->
+<section class="section section--soft"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Jadwal</span><h2>Agenda Mendatang</h2></div><a class="btn btn--outline btn--sm" href="agenda.html">Semua Agenda</a></div>
+  <div class="agenda-home"><div id="home-agenda-next"></div><div id="home-agenda" class="agenda-home__list"></div></div>
+</div></section>
+
+<!-- PROGRAM KERJA -->
+<section class="section"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Program Kerja</span><h2>Fokus Kegiatan Utama</h2></div><a class="btn btn--outline btn--sm" href="organisasi.html#program">Selengkapnya</a></div>
+  <div class="grid grid--4" id="home-programs"></div>
+</div></section>
+
+<!-- PENGURUS PAGUYUBAN -->
+<section class="section section--soft"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Pengurus</span><h2>Struktur Pimpinan Paguyuban</h2></div><a class="btn btn--outline btn--sm" href="organisasi.html#struktur">Lihat Struktur Lengkap</a></div>
+  <div class="grid grid--4" id="home-pengurus"></div>
+</div></section>
+
+<!-- DOKUMENTASI KEGIATAN -->
+<section class="section"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Dokumentasi</span><h2>Album &amp; Galeri Kegiatan</h2></div><a class="btn btn--outline btn--sm" href="album.html">Semua Album</a></div>
+  <div class="mosaic" id="home-albums"></div>
+</div></section>
+
+<!-- DAFTAR DESA (TATA LETAK DIPERBAIKI SECARA TOTAL, JAUH LEBIH RAPI & MENARIK) -->
+<section class="section section--soft" id="daftar-desa"><div class="container">
+  <div class="finder-head">
+    <div class="finder-head__text">
+      <span class="eyebrow">Wilayah &amp; Keanggotaan</span>
+      <h2>Daftar Desa se-Kabupaten Purworejo</h2>
+      <p>Daftar seluruh desa anggota paguyuban beserta nama kepala desa, kecamatan, dan kontak di 16 kecamatan se-Purworejo.</p>
+    </div>
+    <a class="btn btn--primary" href="organisasi.html#desa">Lihat Semua Desa</a>
+  </div>
+  <div class="finder-box">
+    <div class="finder-search">
+      <input class="search" id="home-desa-q" type="search" placeholder="Ketik nama desa atau kepala desa..." aria-label="Cari desa">
+      <select class="select" id="home-kec-filter" aria-label="Filter Kecamatan"></select>
+      <button class="btn btn--accent" id="home-desa-search-btn" type="button">Cari Desa</button>
+    </div>
+    <div id="home-desa-results" style="margin-top:20px" hidden></div>
+  </div>
+  <div class="kec-grid" id="home-kec-grid"></div>
+</div></section>
+
+<!-- CTA HUBUNGI KAMI -->
+<section class="cta"><div class="container cta__in"><div><h2>Ada pertanyaan atau ingin berkoordinasi?</h2><p>Sekretariat Paguyuban Kepala Desa &amp; Perangkat Desa Polosoro siap melayani.</p></div><div class="cta__actions"><a class="btn btn--accent" href="kontak.html">Hubungi Kami</a></div></div></section>
+</main>
+<div id="site-footer"></div>
+<script src="js/config.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/data.js"></script>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

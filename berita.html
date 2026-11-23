@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="id" class="js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Berita - PKD Polosoro Purworejo</title>
+<meta name="description" content="Kabar, pengumuman, dan kegiatan paguyuban.">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="berita">
+<div id="site-topbar"></div>
+<div id="site-header"></div>
+<main id="main">
+
+<div id="news-list-view">
+<section class="page-head"><div class="container"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Beranda</a> / <span>Berita</span></nav><h1>Berita</h1></div></section>
+
+<section class="section"><div class="container">
+  <div class="filters"><div class="pills" id="news-cats"></div><input class="search" id="news-q" type="search" placeholder="Cari berita" aria-label="Cari berita"></div>
+  <div class="layout">
+    <div><div id="news-featured" style="margin-bottom:24px"></div><div class="grid grid--2" id="news-grid"></div>
+      <p class="empty" id="news-empty" hidden>Berita tidak ditemukan. <button class="btn btn--outline btn--sm" id="news-reset" type="button">Atur ulang</button></p>
+      <div class="pagination" id="news-pager"></div></div>
+    <aside class="side">
+      <div class="card"><h3>Kategori</h3><ul class="side-list" id="side-cats"></ul></div>
+      <div class="card"><h3>Terpopuler</h3><ul class="side-list" id="side-popular"></ul></div>
+      <div class="card"><h3>Arsip</h3><ul class="side-list" id="side-archive"></ul></div>
+    </aside>
+  </div>
+</div></section>
+</div>
+<div id="news-detail-view" hidden>
+<section class="page-head"><div class="container"><nav class="breadcrumb"><a href="index.html">Beranda</a> / <a href="berita.html">Berita</a> / <span id="crumb-title"></span></nav></div></section>
+<section class="section"><div class="container"><article class="article" id="news-article"></article></div></section>
+</div>
+</main>
+<div id="site-footer"></div>
+<script src="js/config.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/data.js"></script>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

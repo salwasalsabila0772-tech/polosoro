@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="id" class="js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Organisasi - PKD Polosoro Purworejo</title>
+<meta name="description" content="Sejarah, visi misi, struktur pengurus, program kerja, dan daftar desa.">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="organisasi">
+<div id="site-topbar"></div>
+<div id="site-header"></div>
+<main id="main">
+<section class="page-head">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Beranda</a> <span class="sep">/</span> <span>Organisasi</span></nav>
+    <h1>Profil &amp; Struktur Organisasi</h1>
+    <p>Mengenal lebih dekat perjalanan, nilai, struktur kepengurusan, dan program kerja Paguyuban Kepala Desa &amp; Perangkat Desa Polosoro Purworejo.</p>
+  </div>
+</section>
+
+<nav class="subnav" aria-label="Navigasi bagian halaman">
+  <div class="container">
+    <a href="#sejarah-sec">Sejarah</a>
+    <a href="#visi-sec">Visi &amp; Misi</a>
+    <a href="#struktur">Struktur Pengurus</a>
+    <a href="#program">Program Kerja</a>
+    <a href="#dokumen">Dokumen Resmi</a>
+    <a href="#desa">Daftar Desa</a>
+  </div>
+</nav>
+
+<section class="section" id="sejarah-sec">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Sejarah &amp; Kilas Balik</span>
+        <h2>Perjalanan Paguyuban Polosoro</h2>
+      </div>
+    </div>
+    <div class="grid grid--4" id="sejarah"></div>
+  </div>
+</section>
+
+<section class="section section--soft" id="visi-sec">
+  <div class="container vm">
+    <div class="card card--pad">
+      <span class="eyebrow">Arah Kebijakan</span>
+      <h2 style="font-size:1.5rem;margin-bottom:14px">Visi Paguyuban</h2>
+      <p id="visi" style="font-size:1.18rem;font-weight:600;color:var(--color-primary-dark);line-height:1.6;margin:0"></p>
+    </div>
+    <div class="card card--pad">
+      <span class="eyebrow">Misi Utama</span>
+      <h2 style="font-size:1.5rem;margin-bottom:14px">Misi Paguyuban</h2>
+      <ol class="misi" id="misi"></ol>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="struktur">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="eyebrow">Bagan Organisasi</span>
+      <h2>Susunan Pengurus Periode Berjalan</h2>
+      <p>Struktur kepengurusan terpadu mewakili seluruh wilayah kecamatan di Kabupaten Purworejo.</p>
+    </div>
+    <div class="tree" id="tree"></div>
+  </div>
+</section>
+
+<section class="section section--soft" id="program">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Pemberdayaan</span>
+        <h2>Program Kerja Unggulan</h2>
+      </div>
+    </div>
+    <div class="grid grid--4" id="org-programs"></div>
+  </div>
+</section>
+
+<section class="section" id="dokumen">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Transparansi</span>
+        <h2>Dokumen &amp; Regulasi Organisasi</h2>
+      </div>
+    </div>
+    <div class="grid grid--3" id="docs"></div>
+  </div>
+</section>
+
+<!-- DAFTAR DESA (DIRANCANG ULANG: TABEL RAPI, PADDING LEGA, TIDAK NEMPEL GARIS) -->
+<section class="section section--soft" id="desa">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Data Anggota Wilayah</span>
+        <h2>Daftar Desa se-Kabupaten Purworejo</h2>
+        <p>Gunakan pencarian atau filter per kecamatan untuk menemukan data desa dan kepala desa.</p>
+      </div>
+      <div id="desa-counter" class="chip chip--accent">Memuat data...</div>
+    </div>
+    
+    <div class="tools">
+      <input class="search" id="desa-q" type="search" placeholder="Cari nama desa atau kepala desa..." aria-label="Cari desa">
+      <select class="select" id="desa-kec" aria-label="Pilih Kecamatan"></select>
+    </div>
+
+    <div class="table-wrap">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nama Desa</th>
+            <th>Kepala Desa</th>
+            <th>Kecamatan</th>
+            <th>Jumlah Penduduk</th>
+            <th>Alamat Balai Desa</th>
+            <th style="text-align:right">Kontak</th>
+          </tr>
+        </thead>
+        <tbody id="desa-rows"></tbody>
+      </table>
+    </div>
+
+    <p class="empty" id="desa-empty" hidden>Desa yang Anda cari tidak ditemukan. Coba gunakan kata kunci lain.</p>
+    <div class="pagination" id="desa-pager"></div>
+  </div>
+</section>
+</main>
+<div id="site-footer"></div>
+<script src="js/config.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/data.js"></script>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
