@@ -6,8 +6,16 @@
   var page = location.pathname.split("/").pop() || "index.html";
   var parent = page;
 
+  var activeAnchor = S.nav.some(function (i) {
+    var hashAt = i.href.indexOf("#");
+    return hashAt !== -1 && i.href.slice(0, hashAt) === parent && i.href.slice(hashAt) === location.hash;
+  });
   var links = S.nav.map(function (i) {
-    return '<li><a href="' + i.href + '"' + (i.href === parent ? ' aria-current="page"' : "") + ">" + i.label + "</a></li>";
+    var hashAt = i.href.indexOf("#");
+    var isCurrent = hashAt !== -1
+      ? i.href.slice(0, hashAt) === parent && i.href.slice(hashAt) === location.hash
+      : i.href === parent && !activeAnchor;
+    return '<li><a href="' + i.href + '"' + (isCurrent ? ' aria-current="page"' : "") + ">" + i.label + "</a></li>";
   }).join("");
 
   var topbar =

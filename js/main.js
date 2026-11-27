@@ -76,7 +76,7 @@
 
   /* ---------- KOMPONEN KARTU ---------- */
   function newsCard(n) {
-    return '<a class="card reveal" href="berita.html?id=' + n.id + '">' +
+    return '<a class="card news-card reveal" href="berita.html?id=' + n.id + '">' +
       '<div class="card__img"><img src="' + img(n.image) + '" alt="" loading="lazy"></div>' +
       '<div class="card__body"><span class="chip">' + n.category + '</span><h3>' + n.title + '</h3><p>' + n.excerpt + '</p><span class="meta">' + fmt(n.date) + '</span></div></a>';
   }
@@ -295,9 +295,20 @@
     }).join(""));
 
     var K = {}; D.pengurus.forEach(function (p) { K[p.key] = p; });
+    function initials(name) {
+      return (name || "").replace(/[.,]/g, " ").split(/\s+/).filter(function (part) { return part.length > 1; }).slice(0, 2).map(function (part) {
+        return part.charAt(0);
+      }).join("").toUpperCase();
+    }
     function node(p, sm) {
       if (!p) return "";
-      return '<div class="node' + (sm ? ' node--sm' : '') + '"><img src="' + img(p.image) + '" alt="Foto ' + p.name + '" style="object-fit:cover"><h3>' + p.name + '</h3><span>' + p.role + '</span></div>';
+      var hasPhoto = p.image && p.image !== "person.svg";
+      var avatar = hasPhoto
+        ? '<img src="' + img(p.image) + '" alt="Foto ' + p.name + '" loading="lazy">'
+        : '<span class="node__initials" aria-hidden="true">' + initials(p.name) + '</span>';
+      return '<div class="node' + (sm ? ' node--sm' : '') + (p.key === "ketua" ? ' node--leader' : '') + '">' +
+        '<div class="node__avatar">' + avatar + '</div>' +
+        '<div class="node__copy"><h3>' + p.name + '</h3><span>' + p.role + '</span></div></div>';
     }
     var L = '<div class="tree__line"></div>';
     setHTML("#tree", '<div class="tree__row tree__row--1">' + node(K.ketua) + '</div>' + L +
@@ -400,18 +411,10 @@
           (!st.q || (x.title + " " + x.excerpt).toLowerCase().indexOf(st.q) > -1);
       }).sort(byDateDesc);
 
-      var first = st.page === 1 && st.cat === "Semua" && !st.q && !st.month && list.length > 3;
-      var feat = first ? list[0] : null, rest = first ? list.slice(1) : list, from = (st.page - 1) * per;
-
-      setHTML("#news-featured", feat ? '<a class="card news-feature" href="berita.html?id=' + feat.id + '">' +
-        '<div class="card__img"><img src="' + img(feat.image) + '" alt=""></div>' +
-        '<div class="card__body"><span class="chip chip--accent">Unggulan</span> <span class="chip">' + feat.category + '</span>' +
-        '<h2 style="font-size:1.6rem;margin-top:12px">' + feat.title + '</h2><p>' + feat.excerpt + '</p>' +
-        '<span class="meta">' + fmt(feat.date) + ' · ' + (feat.author || 'Humas') + '</span></div></a>' : "");
-
-      setHTML("#news-grid", rest.slice(from, from + per).map(newsCard).join(""));
+      var from = (st.page - 1) * per;
+      setHTML("#news-grid", list.slice(from, from + per).map(newsCard).join(""));
       $("#news-empty").hidden = list.length > 0;
-      paginate($("#news-pager"), rest.length, per, st.page, function (p) {
+      paginate($("#news-pager"), list.length, per, st.page, function (p) {
         st.page = p; drawNews(); window.scrollTo({ top: 200, behavior: "smooth" });
       });
       observe();

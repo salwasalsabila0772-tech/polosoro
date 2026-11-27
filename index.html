@@ -18,8 +18,13 @@
 <div id="site-header"></div>
 <main id="main">
 
-<!-- HERO: Tata letak 2 kolom (tagline di sebelah kiri, frame foto placeholder di sebelah kanan tanpa logo) -->
+<!-- HERO: tagline menyatu dengan foto suasana pedesaan -->
 <section class="hero">
+  <!-- Foto stok: Tom Fisk / Pexels. Foto bisa diganti lewat Panel Admin. -->
+  <div class="hero__img" id="hero-img-box">
+    <img class="hero__photo" src="https://images.pexels.com/photos/5204449/pexels-photo-5204449.jpeg?auto=compress&amp;dpr=1&amp;h=750&amp;w=1260" alt="Hamparan sawah hijau di pedesaan Indonesia" fetchpriority="high">
+    <a class="hero__photo-credit" href="https://www.pexels.com/photo/green-rice-field-5204449/" target="_blank" rel="noopener noreferrer">Foto: Tom Fisk / Pexels</a>
+  </div>
   <div class="container hero__in">
     <div class="hero__text">
       <div class="hero__badge"><span class="badge-dot"></span> Wadah Resmi Paguyuban Kepala Desa &amp; Perangkat Desa · Kab. Purworejo</div>
@@ -39,17 +44,6 @@
       </div>
     </div>
 
-    <!-- FRAME FOTO DI SEBELAH TAGLINE (FOTO DIKOSONGKAN / PLACEHOLDER BERSIH, BISA DIUPLOAD DARI ADMIN) -->
-    <div class="hero__img" id="hero-img-box">
-      <div class="hero__placeholder">
-        <div class="hero__placeholder-icon">
-          <span class="icon" data-icon="image"></span>
-        </div>
-        <div class="hero__placeholder-title">Ruang Foto Dokumentasi</div>
-        <div class="hero__placeholder-desc">Area foto utama kegiatan paguyuban (dapat diunggah langsung melalui Panel Admin)</div>
-        <span class="chip chip--accent" style="margin-top:14px">Foto Belum Ditambahkan</span>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -72,8 +66,8 @@
 </div></section>
 
 <!-- PROGRAM KERJA -->
-<section class="section"><div class="container">
-  <div class="section-head"><div><span class="eyebrow">Program Kerja</span><h2>Fokus Kegiatan Utama</h2></div><a class="btn btn--outline btn--sm" href="organisasi.html#program">Selengkapnya</a></div>
+<section class="section" id="layanan"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Layanan &amp; Program Kerja</span><h2>Fokus Kegiatan Utama</h2></div><a class="btn btn--outline btn--sm" href="organisasi.html#program">Selengkapnya</a></div>
   <div class="grid grid--4" id="home-programs"></div>
 </div></section>
 

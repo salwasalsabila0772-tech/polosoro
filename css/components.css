@@ -63,7 +63,7 @@
 .chip--success { background: #dcfce7; color: #166534; }
 
 /* KARTU DENGAN PADDING YANG RAPI DAN TIDAK NEMPEL GARIS */
-.card { background: var(--color-card); border: 1px solid var(--color-line); border-radius: var(--radius); overflow: hidden; transition: transform .2s, box-shadow .2s; box-shadow: 0 4px 14px rgba(47, 22, 89, 0.04); }
+.card { background: var(--color-card); border: 1px solid var(--color-line); border-radius: var(--radius); overflow: hidden; transition: transform .2s, box-shadow .2s; box-shadow: var(--shadow-soft); }
 a.card:hover, .card--hover:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
 .card__img { position: relative; aspect-ratio: 16/10; background: var(--color-soft); overflow: hidden; }
 .card__img img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
@@ -106,7 +106,7 @@ a.card:hover .card__img img { transform: scale(1.04); }
 .form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 
 /* KALENDER */
-.cal { background: #fff; border: 1px solid var(--color-line); border-radius: var(--radius); padding: 24px; box-shadow: 0 4px 14px rgba(47, 22, 89, 0.04); }
+.cal { background: #fff; border: 1px solid var(--color-line); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow-soft); }
 .cal__head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
 .cal__head strong { font: 700 1.15rem var(--font-heading); color: var(--color-primary-dark); }
 .cal__nav { display: flex; gap: 8px; }
@@ -134,7 +134,7 @@ a.card:hover .card__img img { transform: scale(1.04); }
 .lb-close { top: 16px; right: 16px; } .lb-prev { left: 16px; } .lb-next { right: 16px; }
 
 /* TABEL DATA MODERN (DENGAN INDIKATOR GESER DI HP) */
-.table-wrap { background: #fff; border: 1px solid var(--color-line); border-radius: var(--radius); overflow-x: auto; -webkit-overflow-scrolling: touch; box-shadow: 0 4px 14px rgba(47, 22, 89, 0.04); margin-bottom: 24px; position: relative; }
+.table-wrap { background: #fff; border: 1px solid var(--color-line); border-radius: var(--radius); overflow-x: auto; -webkit-overflow-scrolling: touch; box-shadow: var(--shadow-soft); margin-bottom: 24px; position: relative; }
 .table { width: 100%; border-collapse: separate; border-spacing: 0; min-width: 640px; text-align: left; }
 .table th { background: var(--color-soft-2); color: var(--color-primary-dark); font: 700 .84rem var(--font-body); padding: 14px 20px; border-bottom: 1.5px solid var(--color-line); text-transform: uppercase; letter-spacing: .04em; white-space: nowrap; }
 .table td { padding: 14px 20px; border-bottom: 1px solid var(--color-line); font-size: .92rem; vertical-align: middle; }

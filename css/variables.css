@@ -11,6 +11,9 @@
   --color-soft-2: #ebe3f8;
   --color-accent: #f5b400;         /* kuning emas (dari logo) */
   --color-accent-ink: #2a1250;     /* teks di atas kuning */
+  --color-earth: #a96846;          /* cokelat tanah: aksen hangat pendamping ungu */
+  --color-earth-dark: #70452f;
+  --color-earth-soft: #f4e9e2;
   --color-red: #d9262c;
   --color-green: #15803d;          /* tombol WhatsApp */
 
@@ -25,6 +28,7 @@
 
   --radius: 16px;
   --radius-sm: 10px;
+  --shadow-soft: 0 6px 18px rgba(47, 22, 89, 0.07);
   --shadow: 0 12px 30px rgba(60, 28, 110, 0.13);
   --container: 1200px;
 }

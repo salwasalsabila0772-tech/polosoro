@@ -24,9 +24,11 @@
     nav: [
       { label: "Beranda", href: "index.html" },
       { label: "Organisasi", href: "organisasi.html" },
+      { label: "Layanan", href: "index.html#layanan" },
       { label: "Berita", href: "berita.html" },
       { label: "Album", href: "album.html" },
-      { label: "Agenda", href: "agenda.html" }
+      { label: "Agenda", href: "agenda.html" },
+      { label: "Peta", href: "kontak.html#peta" }
     ]
   };
 
@@ -43,6 +45,17 @@
   } catch (e) {
     console.warn("Gagal memuat konfigurasi dari localStorage:", e);
   }
+
+  // Tambahkan menu layanan dan peta pada konfigurasi lama yang sudah tersimpan.
+  [
+    { label: "Layanan", href: "index.html#layanan" },
+    { label: "Peta", href: "kontak.html#peta" }
+  ].forEach(function (item) {
+    var exists = defaultConfig.nav.some(function (link) {
+      return (link.label || "").toLowerCase() === item.label.toLowerCase();
+    });
+    if (!exists) defaultConfig.nav.push(item);
+  });
 
   window.SITE = defaultConfig;
 })();
