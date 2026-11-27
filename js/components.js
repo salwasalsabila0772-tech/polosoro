@@ -6,17 +6,34 @@
   var page = location.pathname.split("/").pop() || "index.html";
   var parent = page;
 
-  var activeAnchor = S.nav.some(function (i) {
+  var allNavLinks = [];
+  S.nav.forEach(function (item) {
+    if (item.items) Array.prototype.push.apply(allNavLinks, item.items);
+    else allNavLinks.push(item);
+  });
+  var activeAnchor = allNavLinks.some(function (i) {
     var hashAt = i.href.indexOf("#");
     return hashAt !== -1 && i.href.slice(0, hashAt) === parent && i.href.slice(hashAt) === location.hash;
   });
+  function navLinkIsCurrent(item) {
+    var hashAt = item.href.indexOf("#");
+    return hashAt !== -1
+      ? item.href.slice(0, hashAt) === parent && item.href.slice(hashAt) === location.hash
+      : item.href === parent && !activeAnchor;
+  }
   var links = S.nav.map(function (i) {
-    var hashAt = i.href.indexOf("#");
-    var isCurrent = hashAt !== -1
-      ? i.href.slice(0, hashAt) === parent && i.href.slice(hashAt) === location.hash
-      : i.href === parent && !activeAnchor;
-    return '<li><a href="' + i.href + '"' + (isCurrent ? ' aria-current="page"' : "") + ">" + i.label + "</a></li>";
+    if (i.items) {
+      var active = i.items.some(navLinkIsCurrent);
+      var children = i.items.map(function (child) {
+        return '<li><a href="' + child.href + '"' + (navLinkIsCurrent(child) ? ' aria-current="page"' : "") + ">" + child.label + "</a></li>";
+      }).join("");
+      return '<li class="nav__group"><details class="nav__dropdown' + (active ? ' is-active' : '') + '"><summary>' + i.label + '</summary><ul class="nav__submenu">' + children + '</ul></details></li>';
+    }
+    return '<li><a href="' + i.href + '"' + (navLinkIsCurrent(i) ? ' aria-current="page"' : "") + ">" + i.label + "</a></li>";
   }).join("");
+  var footerLinks = S.nav.reduce(function (all, item) {
+    return all.concat(item.items || [item]);
+  }, []);
 
   var topbar =
     '<div class="topbar"><div class="container topbar__in">' +
@@ -39,7 +56,7 @@
         '<div><a class="brand brand--light" href="index.html"><img src="' + S.logo + '" alt="" width="50" height="50"><span class="brand__text"><strong>' + S.shortName.toUpperCase() + "</strong><span>" + S.subtitle + "</span></span></a>" +
           '<p class="footer__about">Wadah silaturahmi, belajar, dan gotong royong kepala desa dan perangkat desa se-' + S.subtitle + " untuk mewujudkan desa mandiri dan sejahtera.</p>" +
           '<div class="footer__social"><a href="' + S.social.facebook + '" aria-label="Facebook">' + window.icon("facebook") + "</a><a href=\"" + S.social.instagram + '" aria-label="Instagram">' + window.icon("instagram") + "</a><a href=\"" + S.social.youtube + '" aria-label="YouTube">' + window.icon("youtube") + "</a></div></div>" +
-        "<div><h4>Menu Utama</h4><ul>" + S.nav.map(function (i) { return '<li><a href="' + i.href + '">' + i.label + "</a></li>"; }).join("") + "</ul></div>" +
+        "<div><h4>Menu Utama</h4><ul>" + footerLinks.map(function (i) { return '<li><a href="' + i.href + '">' + i.label + "</a></li>"; }).join("") + "</ul></div>" +
         '<div><h4>Akses Cepat</h4><ul><li><a href="organisasi.html#desa">Daftar Desa</a></li><li><a href="organisasi.html#struktur">Struktur Pengurus</a></li><li><a href="kontak.html">Kontak Kami</a></li><li><a href="' + S.adminUrl + '" style="font-weight:700;color:var(--color-accent)">🔐 Portal Admin</a></li></ul></div>' +
         '<div><h4>Sekretariat</h4><ul class="footer__contact">' +
           "<li>" + window.icon("pin") + "<span>" + S.address + "</span></li>" +

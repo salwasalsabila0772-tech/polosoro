@@ -24,10 +24,15 @@
     nav: [
       { label: "Beranda", href: "index.html" },
       { label: "Organisasi", href: "organisasi.html" },
-      { label: "Layanan", href: "index.html#layanan" },
+      {
+        label: "Layanan & Agenda",
+        items: [
+          { label: "Layanan", href: "index.html#layanan" },
+          { label: "Agenda", href: "agenda.html" }
+        ]
+      },
       { label: "Berita", href: "berita.html" },
       { label: "Album", href: "album.html" },
-      { label: "Agenda", href: "agenda.html" },
       { label: "Peta", href: "kontak.html#peta" }
     ]
   };
@@ -46,16 +51,23 @@
     console.warn("Gagal memuat konfigurasi dari localStorage:", e);
   }
 
-  // Tambahkan menu layanan dan peta pada konfigurasi lama yang sudah tersimpan.
-  [
-    { label: "Layanan", href: "index.html#layanan" },
-    { label: "Peta", href: "kontak.html#peta" }
-  ].forEach(function (item) {
-    var exists = defaultConfig.nav.some(function (link) {
-      return (link.label || "").toLowerCase() === item.label.toLowerCase();
-    });
-    if (!exists) defaultConfig.nav.push(item);
+  // Satukan menu Layanan dan Agenda pada konfigurasi lama yang tersimpan.
+  var layananAgenda = {
+    label: "Layanan & Agenda",
+    items: [
+      { label: "Layanan", href: "index.html#layanan" },
+      { label: "Agenda", href: "agenda.html" }
+    ]
+  };
+  defaultConfig.nav = (defaultConfig.nav || []).filter(function (link) {
+    var label = (link.label || "").toLowerCase();
+    return label !== "layanan" && label !== "agenda" && label !== "layanan & agenda";
   });
+  var orgIndex = defaultConfig.nav.findIndex(function (link) { return link.href === "organisasi.html"; });
+  defaultConfig.nav.splice(orgIndex < 0 ? defaultConfig.nav.length : orgIndex + 1, 0, layananAgenda);
+  if (!defaultConfig.nav.some(function (link) { return (link.label || "").toLowerCase() === "peta"; })) {
+    defaultConfig.nav.push({ label: "Peta", href: "kontak.html#peta" });
+  }
 
   window.SITE = defaultConfig;
 })();
